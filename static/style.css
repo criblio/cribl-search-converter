@@ -1,0 +1,95 @@
+/* Custom styles for Inter font and general aesthetics */
+:root {
+    font-family: 'Inter', sans-serif;
+}
+/* Base class for all lower panels */
+.mono-panel {
+   font-family: monospace;
+   font-size: 0.875rem; /* text-sm */
+   background-color: #f9fafb; /* gray-50 */
+   color: #111827; /* gray-900 */
+   /* Force light theme for panels regardless of mode */
+   @apply dark:bg-white dark:text-gray-900;
+}
+
+/* MODIFIED: Removed max-height for resizability */
+.scroll-area-log {
+    /* max-height: 256px; */ 
+    min-height: 128px;
+    overflow-y: auto; 
+    resize: vertical; 
+    border: 1px solid #e5e7eb;
+    @apply dark:border-gray-300;
+    padding: 8px;
+    border-radius: 6px;
+}
+/* MODIFIED: Removed max-height for resizability */
+.scroll-area-results {
+   /* max-height: 576px; */
+   min-height: 200px;
+   overflow-y: auto;
+   resize: vertical; 
+   border: 1px solid #e5e7eb;
+   @apply dark:border-gray-300;
+   border-radius: 6px;
+}
+/* MODIFIED: Removed max-height, set min-height */
+.scroll-area-loaded-searches {
+   overflow-y: auto;
+   border: 1px solid #e5e7eb;
+   @apply dark:border-gray-300;
+   border-radius: 6px;
+   padding: 8px;
+   resize: vertical; 
+   min-height: 400px; /* Give it a default large height */
+}
+.card-shadow {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    @apply dark:shadow-xl dark:shadow-gray-900/50;
+}
+#results-table-wrapper table { 
+    border-collapse: separate;
+    border-spacing: 0;
+}
+#results-table-wrapper thead th { 
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    @apply bg-gray-100 dark:bg-gray-100;
+}
+#theme-toggle-label {
+     @apply ml-2 text-xs font-medium;
+}
+#results-table-body td {
+    @apply px-3 py-2 break-words text-sm max-w-sm lg:max-w-md;
+}
+.visually-hidden-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+.drop-zone-highlight {
+    @apply bg-blue-50 dark:bg-gray-700 ring-2 ring-blue-500;
+}
+/* AI Log styles */
+.ai-log-copy-button {
+     @apply text-blue-500 hover:text-blue-700 transition duration-150 p-1 rounded-full hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 inline-block align-middle ml-2 cursor-pointer;
+}
+.ai-log-entry {
+     padding-bottom: 6px;
+     margin-bottom: 6px;
+}
+.ai-log-separator {
+    border-top: 1px dashed #d1d5db; /* gray-300 */
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.ai-log-entry:last-child hr {
+     display: none;
+ }
