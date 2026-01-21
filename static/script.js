@@ -760,7 +760,7 @@ document.addEventListener('DOMContentLoaded', () => { // (from a.py)
     initDarkMode(); 
     initFileHandlers(); 
     const outputInput = document.getElementById('output-filename');
-    if (outputInput) { outputInput.value = state.outputFile; outputInput.addEventListener('input', (e) => { state.outputFile = e.t.value; }); }
+    if (outputInput) { outputInput.value = state.outputFile; outputInput.addEventListener('input', (e) => { state.outputFile = e.target.value; }); }
     toggleDownloadButton(false); 
     const noResults = document.getElementById('no-results-message'); if (noResults) noResults.textContent = 'No queries converted yet...';
     const logP = document.querySelector('#log-output p'); if (logP) logP.className = "text-blue-600"; 
